@@ -61,7 +61,7 @@ public class InicioSesion extends javax.swing.JFrame {
         btnRegistro.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         btnRegistro.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistro.setText("Registrarse");
-        btnRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        btnGuardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistroActionPerformed(evt);
