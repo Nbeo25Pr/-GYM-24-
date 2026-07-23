@@ -54,6 +54,7 @@ public class InicioSesion extends javax.swing.JFrame {
 
         txt_usuario.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         txt_usuario.setForeground(new java.awt.Color(110, 110, 110));
+        txt_usuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(202, 202, 202), 1, true));
         txt_usuario.setDisabledTextColor(new java.awt.Color(0, 153, 255));
 
         btn_ingresar.setBackground(new java.awt.Color(255, 204, 0));
@@ -175,12 +176,12 @@ public class InicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_ingresar;
+    public javax.swing.JButton btn_ingresar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_bienvenido;
     private javax.swing.JLabel lbl_pass;
     private javax.swing.JLabel lbl_user;
-    private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_usuario;
+    public javax.swing.JPasswordField txt_password;
+    public javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }
