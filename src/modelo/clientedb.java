@@ -70,16 +70,18 @@ public class clientedb {
                 
                 int id = result.getInt("id_cliente");
                 String nombre  = result.getString("nombre");
-                String   = result.getString("matricula");
-                int edad = result.getInt("edad");
-                String carrera  = result.getString("carrera");
+                String fecha_registro  = result.getString("fecha_registro");
+                String tipo_sub = result.getString("tipo_sub");
+                String fecha_pago = result.getString("fecha_pago");
+                String fecha_termino  = result.getString("fecha_termino");
+                String clase = result.getString("clase");
                 
                 // Metodo para hcer el guardado en la lista 
                 // Crear Objeto de estudiante y guardarlo en la lista 
-                Estudiante estudiante = new Estudiante(id,nombre,matricula,edad,carrera);
+                cliente Cliente = new cliente(id,nombre,fecha_registro, tipo_sub, fecha_pago, fecha_termino, clase);
                 
                 // Guardar objeto en la lista 
-                listaEstudiantes.add(estudiante);
+                listaclientes.add(Cliente);
                 
                 
                 
@@ -89,31 +91,32 @@ public class clientedb {
             System.out.println("Error en consulta:" + e.getMessage());
         }
         
-        return listaEstudiantes;
+        return listaclientes;
         
     }
     
     // METODO PARA ACTUALIZAR ESTUDIAMTES
     
-    public boolean actualizar(Estudiante estudiante){
+    public boolean actualizar(cliente cliente){
         
-        String query_sql = "UPDATE estudiantes SET nombre = ?, matricula = ?, edad = ?, carrera = ? WHERE id_estudiante = ?";
+        String query_sql = "UPDATE estudiantes SET nombre = ?, fecha_registro = ?, tipo_sub = ?, fecha_pago = ?, fecha_termino = ?, clase = ? WHERE id_estudiante = ?";
         
         try{
         
             // Conectar con la BD
                 // conexion a la base de datos 
-            Connection conn = ConexionDB.conexion();
+            Connection conn = Conectiondb.conexion();
             
             // Crear e preparedStatement para mandarlo a la DB 
             PreparedStatement stmt = conn.prepareStatement(query_sql);
             
             // Enviar los datos del modelo
-            stmt.setString(1, estudiante.getNombre());
-             stmt.setString(2, estudiante.getMatricula());
-             stmt.setInt(3, estudiante.getEdad());
-              stmt.setString(4, estudiante.getCarrera());
-              stmt.setInt(5, estudiante.getId());
+            stmt.setString(1, cliente.getNombre());
+            stmt.setString(2, cliente.getFecha_registro());
+            stmt.setString(3, cliente.getTipo_sub());
+            stmt.setString(4, cliente.getFecha_pago());
+            stmt.setString(5, cliente.getFecha_termino());
+            stmt.setString(6, cliente.getClase());
               
               // Verificar el numero de filas que cambiaron 
               int filas_cambiadas = stmt.executeUpdate();
@@ -136,14 +139,14 @@ public class clientedb {
         
     }
     // METODO PARA ELIMINAR UN REGISTRO
-    public boolean eliminar(int idEstudiante){
+    public boolean eliminar(int id_cliente){
         // SE PONE ? PARA EVITAR UNA INYECCCIÓN SQL 
-        String query_sql = "DELETE FROM estudiantes WHERE id_estudiante = ? ";
+        String query_sql = "DELETE FROM cliente WHERE id_cliente = ? ";
         
         try{
                     // Conectar con la BD
                 // conexion a la base de datos 
-            Connection conn = ConexionDB.conexion();
+            Connection conn = Conectiondb.conexion();
             
             // Crear e preparedStatement para mandarlo a la DB 
             PreparedStatement stmt = conn.prepareStatement(query_sql);
