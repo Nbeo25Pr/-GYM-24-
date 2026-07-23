@@ -6,6 +6,7 @@ package modelo;
 import java.sql.*;
 import conexion.Conectiondb;
 
+
 /**
  *
  * @author demia
@@ -26,13 +27,15 @@ public class usuariodb {
             ResultSet result = stmt.executeQuery();
             
             if(result.next()){
-               
+              
                 usuario usuarioencontrado = new usuario(
-                result.getInt("idusuario"),
-                result.getString("nombre")
-                result.getString("usuario"),
-                result.getString("pass") 
+                        result.getInt("id_usuario"),
+                        result.getString("nombre"),
+                        result.getString("usuario"),
+                        result.getString("pass")
                 );
+                
+     
                 return usuarioencontrado;
             }
             
