@@ -181,7 +181,7 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_bienvenido;
     private javax.swing.JLabel lbl_pass;
     private javax.swing.JLabel lbl_user;
-    private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_usuario;
+    public javax.swing.JPasswordField txt_password;
+    public javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }
