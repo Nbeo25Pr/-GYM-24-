@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controlador;
+
 import java.awt.event.ActionEvent;
-import modelo.usuariodb;
-import Vistas.InicioSesion;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+
+// Importaciones de tu modelo
+import modelo.usuariodb;
 import modelo.clientedb;
 import modelo.usuario;
-import Vistas.FRNGestionGym;
 
+// Importaciones de tus vistas
+import Vistas.InicioSesion;
+import Vistas.RegistroCliente;
 
 /**
- *
  * @author demia
  */
 public class controller implements ActionListener {
@@ -33,7 +32,6 @@ public class controller implements ActionListener {
         if(e.getSource() == ventana.btn_ingresar){
             iniciarSesion();
         }
-        
     }
     
     private void iniciarSesion(){
@@ -48,23 +46,21 @@ public class controller implements ActionListener {
         usuario usuarioEncontrado = usuariodb.validarLogin(usuario, password);
         
         if(usuarioEncontrado != null){
-            JOptionPane.showMessageDialog(ventana, "Bienvenido " + usuarioEncontrado.getUsuario());
+            JOptionPane.showMessageDialog(ventana, "Bienvenido " + usuarioEncontrado.getNombre());
             iniciarSistema();
-            
         }else{
             JOptionPane.showMessageDialog(ventana, "Credenciales incorrectas");
         }
     }
     
     private void iniciarSistema(){
-        FRNGestionGym vistaMenu = new FRNGestionGym();
-        clientedb clientedb = new clientedb();
+        RegistroCliente vistaRegistro = new RegistroCliente();
+       
+        clientedb modeloCliente = new clientedb();
         
-        controller controladorRegistro = new controller(vistaMenu, clientedb);
         
-                
-        vistaMenu.setLocationRelativeTo(null);
-        vistaMenu.setVisible(true);
+        vistaRegistro.setLocationRelativeTo(null);
+        vistaRegistro.setVisible(true);
                 
         ventana.dispose();
     }
