@@ -151,7 +151,7 @@ public class clientedb {
             // Crear e preparedStatement para mandarlo a la DB 
             PreparedStatement stmt = conn.prepareStatement(query_sql);
             
-            stmt.setInt(1, idEstudiante);
+            stmt.setInt(1, id_cliente);
             
             // VALOR DE LAS FILAS AFECTADAD
             int filas_cambiadas = stmt.executeUpdate();
