@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.clientedb;
 import modelo.usuario;
+import Vistas.FRNGestionGym;
 
 
 /**
@@ -24,20 +25,20 @@ public class controller implements ActionListener {
     public controller(InicioSesion ventana, usuariodb usuariodb){
         this.ventana = ventana;
         this.usuariodb = usuariodb;
-        this.ventana..addActionListener(this);
+        this.ventana.btn_ingresar.addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent e){
-        if(e.getSource() == ventana.btnInicio){
+        if(e.getSource() == ventana.btn_ingresar){
             iniciarSesion();
         }
         
     }
     
     private void iniciarSesion(){
-        String usuario = ventana.txtUsuario.getText().trim();
-        String password = new String(ventana.txtPass.getPassword());
+        String usuario = ventana.txt_usuario.getText().trim();
+        String password = new String(ventana.txt_password.getPassword());
         
         if(usuario.isEmpty() || password.isEmpty()){
             JOptionPane.showMessageDialog(ventana, "Ingresa todos los campos");
@@ -56,10 +57,10 @@ public class controller implements ActionListener {
     }
     
     private void iniciarSistema(){
-        FrmMenu vistaMenu = new FrmMenu();
-        EstudianteDB estudiantedb = new EstudianteDB();
+        FRNGestionGym vistaMenu = new FRNGestionGym();
+        clientedb clientedb = new clientedb();
         
-        EstudianteController controladorRegistro = new EstudianteController(vistaMenu, estudiantedb );
+        controller controladorRegistro = new controller(vistaMenu, clientedb);
         
                 
         vistaMenu.setLocationRelativeTo(null);
