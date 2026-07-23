@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/Gimnacio/src/Vistas/InicioSesion.java</file>
+            <file>file:/C:/Users/demia/OneDrive/Desktop/-GYM-24-/src/modelo/usuariodb.java</file>
+            <file>file:/C:/Users/demia/OneDrive/Desktop/-GYM-24-/src/conexion/Conectiondb.java</file>
+            <file>file:/C:/Users/demia/OneDrive/Desktop/-GYM-24-/src/controlador/controller.java</file>
+            <file>file:/C:/Users/demia/OneDrive/Desktop/-GYM-24-/src/Vistas/FRNGestionGym.java</file>
+            <file>file:/C:/Users/demia/OneDrive/Desktop/-GYM-24-/src/Vistas/RegistroCliente.java</file>
+            <file>file:/C:/Users/demia/OneDrive/Desktop/-GYM-24-/src/Vistas/InicioSesion.java</file>
         </group>
     </open-files>
 </project-private>

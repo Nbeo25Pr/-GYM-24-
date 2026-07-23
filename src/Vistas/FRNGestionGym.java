@@ -39,7 +39,7 @@ public class FRNGestionGym extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        registro = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnGestion = new javax.swing.JPanel();
@@ -52,19 +52,20 @@ public class FRNGestionGym extends javax.swing.JFrame {
         txtnombre = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         panetabla = new javax.swing.JScrollPane();
+        tablaClientes = new javax.swing.JTable();
         btneliminar = new javax.swing.JButton();
         btnlimpiar = new javax.swing.JButton();
         btnactuzalizar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbtipo = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbclase = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtregistro = new javax.swing.JTextField();
+        txtpago = new javax.swing.JTextField();
+        txtTermino = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,7 +96,7 @@ public class FRNGestionGym extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Menú.");
 
-        jPanel4.setBackground(new java.awt.Color(204, 102, 0));
+        registro.setBackground(new java.awt.Color(204, 102, 0));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,22 +104,22 @@ public class FRNGestionGym extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-grupo-de-usuario-30.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout registroLayout = new javax.swing.GroupLayout(registro);
+        registro.setLayout(registroLayout);
+        registroLayout.setHorizontalGroup(
+            registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(registroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addContainerGap(348, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        registroLayout.setVerticalGroup(
+            registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(registroLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4))
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -153,7 +154,7 @@ public class FRNGestionGym extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -178,7 +179,7 @@ public class FRNGestionGym extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -217,6 +218,19 @@ public class FRNGestionGym extends javax.swing.JFrame {
 
         txtnombre.setBorder(null);
 
+        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        panetabla.setViewportView(tablaClientes);
+
         btneliminar.setBackground(new java.awt.Color(255, 0, 0));
         btneliminar.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         btneliminar.setForeground(new java.awt.Color(255, 255, 255));
@@ -235,10 +249,10 @@ public class FRNGestionGym extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setText("Nombre del cliente");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mensual ", "Trimestral", "Anual" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cmbtipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basico", "Premium" }));
+        cmbtipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cmbtipoActionPerformed(evt);
             }
         });
 
@@ -251,26 +265,31 @@ public class FRNGestionGym extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel14.setText("Tipo de suscripcion");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna", "Spinning", "Yoga", "Pilates" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        cmbclase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna", "Spinning", "Yoga", "Pilates" }));
+        cmbclase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                cmbclaseActionPerformed(evt);
             }
         });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setText("Fecha de termino");
 
-        jTextField1.setText("dd/mm/yyyy");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtregistro.setText("yyyy-mm-dd");
+        txtregistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtregistroActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("dd/mm/yyyy");
+        txtpago.setText("dd/mm/yyyy");
 
-        jTextField3.setText("dd/mm/yyyy");
+        txtTermino.setText("yyyy-mm-dd");
+        txtTermino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTerminoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -295,13 +314,13 @@ public class FRNGestionGym extends javax.swing.JFrame {
                                             .addComponent(jLabel14))
                                         .addGap(88, 88, 88))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField1)
+                                        .addComponent(txtregistro)
                                         .addGap(42, 42, 42)))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel16)
                                     .addComponent(jLabel15)
-                                    .addComponent(jComboBox2, 0, 153, Short.MAX_VALUE)
-                                    .addComponent(jTextField2))))
+                                    .addComponent(cmbclase, 0, 153, Short.MAX_VALUE)
+                                    .addComponent(txtpago))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
@@ -313,8 +332,8 @@ public class FRNGestionGym extends javax.swing.JFrame {
                         .addGap(56, 56, 56))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 153, Short.MAX_VALUE)
+                            .addComponent(txtTermino, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbtipo, javax.swing.GroupLayout.Alignment.LEADING, 0, 153, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -337,20 +356,20 @@ public class FRNGestionGym extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbclase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtregistro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtpago, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTermino, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btneliminar)
@@ -380,17 +399,21 @@ public class FRNGestionGym extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cmbtipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbtipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cmbtipoActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void cmbclaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbclaseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_cmbclaseActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtregistroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtregistroActionPerformed
+
+    private void txtTerminoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTerminoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTerminoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -438,8 +461,8 @@ public class FRNGestionGym extends javax.swing.JFrame {
     public javax.swing.JButton btnactuzalizar;
     public javax.swing.JButton btneliminar;
     public javax.swing.JButton btnlimpiar;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public javax.swing.JComboBox<String> cmbclase;
+    public javax.swing.JComboBox<String> cmbtipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -457,16 +480,17 @@ public class FRNGestionGym extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     public javax.swing.JScrollPane panetabla;
+    public javax.swing.JPanel registro;
+    public javax.swing.JTable tablaClientes;
+    public javax.swing.JTextField txtTermino;
     public javax.swing.JTextField txtnombre;
+    public javax.swing.JTextField txtpago;
+    public javax.swing.JTextField txtregistro;
     // End of variables declaration//GEN-END:variables
 }
 
