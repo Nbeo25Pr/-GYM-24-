@@ -77,6 +77,7 @@ public class clientedb {
             stmt.setString(4, cliente.getFecha_pago());
             stmt.setString(5, cliente.getFecha_termino());
             stmt.setString(6, cliente.getClase());
+            stmt.setInt(7, cliente.getId());
             
             int filas_cambiadas = stmt.executeUpdate();
             
