@@ -56,7 +56,7 @@ public class clientedb {
     }
     
    //Metodo para consultar Estudiantes
-    public List<cliente> consultarEstudiantes(){
+    public List<cliente> consultarclientes(){
         List<cliente> listaclientes = new ArrayList<>();
         
         String query_sql = "SELECT * FROM estudiantes";
